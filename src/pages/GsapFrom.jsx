@@ -1,5 +1,20 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapFrom = () => {
   // TODO: Implement the gsap.from() method
+  useGSAP(() => {
+    gsap.from('#green-box', {
+      x: 250,
+      repeat: -1,
+      yoyo: true,
+      rotation: 360,
+      duration: 2,
+      ease: 'power1.inOut'
+    })
+  }, [])
+  // La propiedad from empieza segun el valor que se le de a x (o en su defecto, a y), en este caso 250. Esta es la unica diferencia con gsap.to
+
 
   return (
     <main>
